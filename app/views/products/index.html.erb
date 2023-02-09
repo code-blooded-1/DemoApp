@@ -1,0 +1,21 @@
+<h1>Products List</h1>
+<ol>
+<% @products.each do |product| %>
+    <li>
+        <ul type="none">
+            <li>
+                <%= product.name %>
+            </li>
+            <li>
+                <%= product.description %>
+            </li>
+            <li>
+                <%= link_to "Show", product %> | 
+                <%= link_to "Edit", edit_product_path(product) %> | 
+                <%= link_to "Delete", delete_product_path(product), method: :delete %>
+            </li>
+        </ul>
+    </li>
+    <br />
+<% end %>
+</ol>

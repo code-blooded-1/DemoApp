@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
         @product = Product.new
     end
 
+    def index
+        @products = Product.all
+    end
+
     def create
         @product = Product.new(product_params)
         if @product.save
@@ -41,6 +45,18 @@ class ProductsController < ApplicationController
 
     rescue StandardError => e
         render "not_found/404"
+    end
+
+    def destroy
+        @product = Product.find(params[:id])
+        id = @product.id
+        @product.destroy
+        flash[:notice] = "Product with id #{id} deleted successfully"
+        redirect_to "index"
+
+    rescue StandardError => e
+        flash[:notice] = "Error: Product not found"
+        render "index"
     end
 
     private
