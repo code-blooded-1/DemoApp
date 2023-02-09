@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
         @product = Product.new(product_params)
         if @product.save
             puts "Data saved!"
+            flash[:notice] = "Product added successfully"
             redirect_to product_path(@product)
         else
             puts "Data not saved"
@@ -31,6 +32,7 @@ class ProductsController < ApplicationController
         @product = Product.find(params[:id])
         if @product.update(product_params)
             puts "Data saved!"
+            flash[:notice] = "Product updated successfully"
             redirect_to product_path(@product)
         else
             puts "Data not saved"
