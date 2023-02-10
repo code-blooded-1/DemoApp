@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
         id = @product.id
         @product.destroy
         flash[:notice] = "Product with id #{id} deleted successfully"
-        redirect_to "index"
+        redirect_to "/products"
 
     rescue StandardError => e
         flash[:notice] = "Error: Product not found"

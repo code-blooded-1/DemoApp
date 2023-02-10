@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :articles
   root "homes#index"
   get '/about' => "homes#about"
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   get '/products/:id' => "products#show", as: :product
   get '/products/:id/edit' => "products#edit", as: :edit_product
   patch '/products/:id' => "products#update", as: :update_product
-  delete '/products/:id' => "products#destroy", as: :delete_product
+  delete '/products/:id' => "products#destroy"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
