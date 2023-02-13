@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pan_detail %>
+
+<div>
+  <%= link_to "Edit this pan detail", edit_pan_detail_path(@pan_detail) %> |
+  <%= link_to "Back to pan details", pan_details_path %>
+
+  <%= button_to "Destroy this pan detail", @pan_detail, method: :delete %>
+</div>

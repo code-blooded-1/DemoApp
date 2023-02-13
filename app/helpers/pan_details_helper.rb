@@ -1,0 +1,2 @@
+module PanDetailsHelper
+end

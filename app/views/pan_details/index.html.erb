@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Pan details</h1>
+
+<div id="pan_details">
+  <% @pan_details.each do |pan_detail| %>
+    <%= render pan_detail %>
+    <p>
+      <%= link_to "Show this pan detail", pan_detail %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pan detail", new_pan_detail_path %>

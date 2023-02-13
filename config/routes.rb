@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pan_details
   resources :users
   resources :articles
   root "homes#index"
