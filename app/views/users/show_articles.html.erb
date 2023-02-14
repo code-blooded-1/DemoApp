@@ -1,1 +1,19 @@
-<h1> User's artciles </h1>
+<h2> <%= @user.name %>'s artciles </h2>
+<% @user.articles.each do |article| %>
+    <p>
+        <strong>Title:</strong>
+        <%= article.title %>
+    </p>
+    <p>
+        <strong>Description:</strong>
+        <%= article.description %>
+    </p>
+    <p>
+        <strong>Created at:</strong>
+        <%= article.created_at %>
+    </p>
+    <p>
+        <%= link_to "View this article", article %>
+    </p>
+    <hr />
+<% end %>

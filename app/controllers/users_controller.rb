@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     end
 
   rescue StandardError => e
+    flash[:notice] = e.to_s
     render :new, status: :unprocessable_entity
   end
 
@@ -60,6 +61,10 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def show_articles
+    @user = set_user
   end
 
   private

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
+  get '/users/:id/articles' => "users#show_articles"
   
   resources :articles
   root "homes#index"
