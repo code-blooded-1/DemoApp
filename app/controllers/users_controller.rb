@@ -32,6 +32,9 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+  rescue StandardError => e
+    render :new, status: :unprocessable_entity
   end
 
   # PATCH/PUT /users/1 or /users/1.json
@@ -45,6 +48,8 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  rescue StandardError => e
+    render :new, status: :unprocessable_entity
   end
 
   # DELETE /users/1 or /users/1.json
