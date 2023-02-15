@@ -34,8 +34,7 @@ class UsersController < ApplicationController
     end
 
   rescue StandardError => e
-    flash[:notice] = e.to_s
-    render :new, status: :unprocessable_entity
+    redirect_to users_path, notice: "User name already taken"
   end
 
   # PATCH/PUT /users/1 or /users/1.json

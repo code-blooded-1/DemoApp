@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :pan_details
 
   get 'signup', to: 'users#new'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  
   resources :users, except: [:new]
   get '/users/:id/articles' => "users#show_articles"
   
