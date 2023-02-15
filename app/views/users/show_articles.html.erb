@@ -1,5 +1,12 @@
-<h2> <%= @user.name %>'s artciles </h2>
-<% @user.articles.each do |article| %>
+<h2> <%= @user.name %>'s articles </h2>
+<div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @articles %>
+    </div>
+    <%= will_paginate @articles, :container => false %>
+</div>
+<div style="margin-top: 1rem">
+<% @articles.each do |article| %>
     <p>
         <strong>Title:</strong>
         <%= article.title %>
