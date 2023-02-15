@@ -6,7 +6,7 @@
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
 
-  <%= link_to "View articles", users_path %>
+  <%= link_to "View articles", "#{@user.id}/articles" %>
 
   <%= button_to "Destroy this user", @user, method: :delete %>
 </div>
